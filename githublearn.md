@@ -81,7 +81,7 @@
   
   - 通过`git init`初始化仓库，并且可以看见我们已经默认进入master分支，并且当前目录下多了一个`·git`目录，不能轻易更改
 
-  ![tupian](初始化.png)
+  ![tupian](https://github.com/wg2021/Git-Github/blob/master/init.png?raw=true)
 
   - 把文件添加到版本库
   - `git add <files>`命令：将文件添加到仓库，这时候文件处于一个临时缓冲区，可以使用`git rm --cached`去除这个缓存
