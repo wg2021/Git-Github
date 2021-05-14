@@ -77,11 +77,11 @@
   - 创建一个空目录，你可以选择在git bash里面创建，或者你可以创建一个文件夹之后右键选择git bash here
   - 通过`git status`命令可以查看仓库状态，目前我们创建的只是一个文件夹，还不算一个git仓库
 
-  ![tupian](gitstatus.png)
+  ![tupian](https://github.com/wg2021/Git-Github/blob/master/picture/gitstatus.png?raw=true)
   
   - 通过`git init`初始化仓库，并且可以看见我们已经默认进入master分支，并且当前目录下多了一个`·git`目录，不能轻易更改
 
-  ![tupian](https://github.com/wg2021/Git-Github/blob/master/init.png?raw=true)
+  ![tupian](https://github.com/wg2021/Git-Github/blob/master/picture/init.png?raw=true)
 
   - 把文件添加到版本库
   - `git add <files>`命令：将文件添加到仓库，这时候文件处于一个临时缓冲区，可以使用`git rm --cached`去除这个缓存
@@ -93,13 +93,13 @@
 
   随着我们的不断修改提交，就相当于游戏的存档，一旦我们误删文件之类的问题，我们可以回到某次的commit中，通过`git log`可以查看我们提交的几个版本
 
-  ![version](version.png)
+  ![version](https://github.com/wg2021/Git-Github/blob/master/picture/version.png?raw=true)
 
   如果我们想要回退之前的版本怎么办呢？首先需要了解在Git中用`HEAD`表示当前版本，上一个版本则是`HEAD^`,上上个就是`HEAD^^`，对于前一百个版本可以用`HEAD~100`表示。
 
   那么将当前版本回退到上一个版本使用`git reset --hard HEAD^`，然后我们就可以看到回到了上一个版本
 
-  ![版本回退](版本回退.png)
+  ![版本回退](https://github.com/wg2021/Git-Github/blob/master/picture/version.png?raw=true)
 
   如果你想要回到你最新的版本，那么你也可以通过`git reset --hard <版本号前几位>`回去。查看版本号的命令是`git log --pretty=online`,如果你是之后想要会到最新版，也可以通过`git reflog`查看你的历史命令。
 
@@ -121,7 +121,7 @@
 
   一般删除文件我们使用`rm <files>`,这时候我们可以`git status`查看仓库状态
 
-  ![仓库状态](仓库状态.png)
+  ![仓库状态](https://github.com/wg2021/Git-Github/blob/master/picture/status.png?raw=true)
 
   我们发现状态提示我们删除了文件，这时候工作区和版本库就不一致了，如果想要在版本库中删除该文件，则`git rm <files>`之后再`git commit -m "remove file"`
 
@@ -146,7 +146,7 @@
 
   提交时忘了备注，当时好像进入vim编辑但是退不出去，直接关闭给git bash，导致重新启动后新的改动不能commit
   
-  ![sulution](问题1.png)
+  ![sulution](https://github.com/wg2021/Git-Github/blob/master/picture/question.png?raw=true)
 
   **解决方法**
 
