@@ -1,3 +1,2 @@
-# Git-Github
-just a process of learning git&github
-
+# the note of study
+just learn something!
