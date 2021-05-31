@@ -121,7 +121,7 @@
 
   一般删除文件我们使用`rm <files>`,这时候我们可以`git status`查看仓库状态
 
-  ![仓库状态](仓库状态.png)
+  ![仓库状态](./picture/status.png)
 
   我们发现状态提示我们删除了文件，这时候工作区和版本库就不一致了，如果想要在版本库中删除该文件，则`git rm <files>`之后再`git commit -m "remove file"`
 
