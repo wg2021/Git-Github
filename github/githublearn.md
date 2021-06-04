@@ -157,7 +157,94 @@
 - 注册github以及配置ssh
   - 创建ssh key，由于之前就已经创建过了，可以在用户目录下找到`.ssh`文件，里面由公钥和私钥
   - 在github的账户设置中`add ssh key`选项里面添加公钥
+
+  ![](./picture/ssh.png)
+
+- 关联以及推送
+
+  当我们在Github上创建好我们的仓库我们可以将它克隆到本地，以可以与本地的仓库关联
+
+  ```powershell
+  git remote add origin git@github.com:用户名/仓库名.git
+  ```
+  然后我们就可以将本地内容推送远程仓库了，由于远程仓库是空的，我们第一次推送加上`-u`的参数，Git不但会把本地的master分支内容推送到远程，还会把本地和远程的master关联起来，以后推送可以省略该参数
+
+  ```powershell
+  git push -u origin master
+  ```
+
+- ssh警告
+
+  当你第一次使用Git的clone或者push命令连接GitHub时，会得到一个警告
+
+  ```
+  The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
+  RSA key fingerprint is xx.xx.xx.xx.xx.
+  Are you sure you want to continue connecting (yes/no)?
+  ```
+
+  这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入yes即可.
+
+  这个警告只会出现一次，后面操作就不会出现了
+
+- 删除远程库
+
+  如果关联时地址填错了，或者想删除远程库，可以使用命令删除，但是在删除之前建议使用`git remote -v`查看远程库信息
   
+  然后在使用命令`git remote rm origin`删除
+
+- 将远程库同步到本地
+
+  有时候我们如果直接在远程库进行操作，例如直接创建一个readme文件，而我们本地库并没有该文件，这时候我们如果需要push是无法执行的，只能先进性仓库的数据同步
+
+  ```powershell
+  git pull origin master
+  ```
+
+- 克隆仓库
+
+  如果我们需要从远程克隆一个仓库到本地
+
+  首先我们需要先得到远程仓库的地址，如下图所示
+
+  ![](./picture/clone.png)
+  
+  复制好地址后我们就可以在我们本地进行操作
+
+  ```powershell
+  git clone https://github.com/wg2021/notes.git
+  ```
+
+  我们就成功的从远程克隆了一个仓库到本地
+
+- 远程下载
+
+  如果我们只是需要别人仓库的单一一个文件，这时候其实就不需要fork别人仓库，然后clone到本地，我们只需要打开你需要下载的文件，然后在右上角找到**Raw**
+
+  ![](./picture/download1.png#pic_center)
+
+  然后右键->链接另存为就可以下载到本地
+
+![](./picture/download2.png#pic_center)
+
+
+## 分支
+
+- 创建分支
+  - `git checkout -b wgc`：创建并切换分支
+  - `git branch wgc`：创建分支
+- 切换分支
+  - `git checkout wgc`：切换分支
+- 查看分支
+  - `git branch`：查看本地分支
+  - `git branch -a`：查看远程分支
+- 拉取远程分支到本地
+  - `git checkout -b 远程分支名`
+- 合并分支
+  - `git merge wgc`
+- 删除分支
+  - `git branch -d wgc`
+
 ## 参考文献
 
 - [廖雪峰git教程](https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304)
